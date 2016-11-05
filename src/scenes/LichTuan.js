@@ -10,8 +10,7 @@ import {
 
 // import { Subheader, Ripple } from 'react-native-material-design';
 
-// const API_URL = 'http://demo9383702.mockable.io/users';
-const API_URL = 'http://demo7138566.mockable.io/vfu-weeks';
+const API_URL = 'http://localhost:1337/getEvents';
 
 export default class LichTuan extends Component {
 
