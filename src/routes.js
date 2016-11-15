@@ -1,26 +1,25 @@
 export default {
 
-    gioiThieu: {
-        initialRoute: true,
+	lichTuan : {
+		initialRoute: true,
+		title: 'Lịch Tuần',
+		component: require('./scenes/LichTuan').default
+	},
 
-        title: 'Giới thiệu',
-        component: require('./scenes/GioiThieu').default,
+	gioiThieu : {
+		title: 'Giới Thiệu',
+		component: require('./scenes/GioiThieu').default,
 
-        children: {
-            example: {
-                // title: 'Child Example', // optional
-                component: require('./scenes/NestedExample').default
-            }
-        }
-    },
+		children: {
+		    example: {
+		        // title: 'Test', // optional
+		        component: require('./scenes/NestedExample').default
+		    }
+		},
+	},
 
-    lichTuan: {
-        title: 'Lịch Tuần',
-        component: require('./scenes/LichTuan').default
-    },
-
-    themes: {
-        title: 'Change Theme',
-        component: require('./scenes/Themes').default
-    }
+	themes : {
+		title: 'Change Theme',
+		component: require('./scenes/Themes').default
+	}
 }

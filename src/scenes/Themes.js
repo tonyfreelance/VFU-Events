@@ -13,18 +13,18 @@ export default class Themes extends Component {
     render() {
         return (
             <View>
-                <Subheader text="Select a theme"/>
-                <View style={styles.container}>
-                    {PRIMARY_COLORS.map((color) => {
-                        return (
-                            <TouchableHighlight key={color} onPress={() => { this.changeTheme(color) }}>
-                                <View  style={[styles.item, { backgroundColor: COLOR[`${color}500`].color }]}>
-                                    <Text style={styles.text}>{color}</Text>
-                                </View>
-                            </TouchableHighlight>
-                        );
-                    })}
-                </View>
+              <Subheader text="Chọn màu nền"/>
+              <View style={styles.container}>
+                {PRIMARY_COLORS.map((color) => {
+                  return (
+                    <TouchableHighlight key={color} onPress={() => { this.changeTheme(color) }}>
+                      <View  style={[styles.item, { backgroundColor: COLOR[`${color}500`].color }]}>
+                        <Text style={styles.text}>{color}</Text>
+                      </View>
+                    </TouchableHighlight>
+                  );
+                })}
+              </View>
             </View>
         );
     }
@@ -34,10 +34,11 @@ const styles = {
     container: {
         flex: 1,
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        alignItems: 'flex-start'
     },
     item: {
-        width: 120,
+        width: 100,
         height: 100,
         justifyContent: 'center',
         alignItems: 'center'

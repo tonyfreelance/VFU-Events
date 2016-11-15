@@ -40,11 +40,13 @@ module.exports = {
 				event = {
 					event: {
 						eventId: uuid.v4(),
-						time: eventsArr[i][2] + ' ' + eventsArr[i][8],
+						time: eventsArr[i][2],
+						hour: eventsArr[i][8],
 						content: eventsArr[i][3],
 						participants: eventsArr[i][4],
 						place: eventsArr[i][5],
 						leader: eventsArr[i][7],
+						date: eventsArr[i][1]
 					}
 				};
 
@@ -78,44 +80,64 @@ module.exports = {
 			var events = {
 				weekId: uuid.v4(),
 				weekNo: weekNo,
-				weekEvents: [
-					{
-						dayId: uuid.v4(),
-						day: 'Thứ Hai',
-						events: Monday
-					},
-					{
-						dayId: uuid.v4(),
-						day: 'Thứ Ba',
-						events: Tuesday
-					},
-					{
-						dayId: uuid.v4(),
-						day: 'Thứ Tư',
-						events: Wednesday
-					},
-					{
-						dayId: uuid.v4(),
-						day: 'Thứ Năm',
-						events: Thursday
-					},
-					{
-						dayId: uuid.v4(),
-						day: 'Thứ Sáu',
-						events: Friday
-					},
-					{
-						dayId: uuid.v4(),
-						day: 'Thứ Bảy',
-						events: Saturday
-					},
-					{
-						dayId: uuid.v4(),
-						day: 'Chủ Nhật',
-						events: Sunday
-					},
-				]
+				weekEvents: []
 			};
+
+			if(Monday.length > 0) {
+				events.weekEvents.push({
+					dayId: uuid.v4(),
+					day: 'Thứ Hai' + ' - ' + Monday[0].event.date,
+					events: Monday
+				});
+			}
+
+			if(Tuesday.length > 0) {
+				events.weekEvents.push({
+					dayId: uuid.v4(),
+					day: 'Thứ Ba'+ ' - ' + Tuesday[0].event.date,
+					events: Tuesday
+				});
+			}
+
+			if(Wednesday.length > 0) {
+				events.weekEvents.push({
+					dayId: uuid.v4(),
+					day: 'Thứ Tư'+ ' - ' + Wednesday[0].event.date,
+					events: Wednesday
+				});
+			}
+
+			if(Thursday.length > 0) {
+				events.weekEvents.push({
+					dayId: uuid.v4(),
+					day: 'Thứ Năm'+ ' - ' + Thursday[0].event.date,
+					events: Thursday
+				});
+			}
+
+			if(Friday.length > 0) {
+				events.weekEvents.push({
+					dayId: uuid.v4(),
+					day: 'Thứ Sáu'+ ' - ' + Friday[0].event.date,
+					events: Friday
+				});
+			}
+
+			if(Saturday.length > 0) {
+				events.weekEvents.push({
+					dayId: uuid.v4(),
+					day: 'Thứ Bảy'+ ' - ' + Saturday[0].event.date,
+					events: Saturday
+				});
+			}
+
+			if(Sunday.length > 0) {
+				events.weekEvents.push({
+					dayId: uuid.v4(),
+					day: 'Chủ Nhật'+ ' - ' + Sunday[0].event.date,
+					events: Sunday
+				});
+			}
 
 			return res.send(events);
 		});

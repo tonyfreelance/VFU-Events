@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1031181107041",
+    "firebase_url": "https://vfu-events.firebaseio.com",
+    "project_id": "vfu-events",
+    "storage_bucket": "vfu-events.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031181107041:android:7f9d7c0b382e4d6a",
+        "android_client_info": {
+          "package_name": "com.vfuscheduler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031181107041-jqvohla5s9g9f5e780mg2a2t0on4hr2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2tI8IMIF-09ePKlxVDtuKKgEYodFvaQc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

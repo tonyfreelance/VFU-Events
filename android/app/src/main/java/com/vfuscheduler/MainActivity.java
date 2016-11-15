@@ -3,6 +3,11 @@ package com.vfuscheduler;
 import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {
+    public static MainActivity mainActivity = null;
+
+      public MainActivity() {
+          mainActivity = this;
+      }
 
     /**
      * Returns the name of the main component registered from JavaScript.

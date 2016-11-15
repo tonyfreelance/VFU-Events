@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import { View, Text, WebView } from 'react-native';
 
 export default class Avatars extends Component {
@@ -7,17 +7,18 @@ export default class Avatars extends Component {
         return (
             <View style={styles.container}>
               <Text style={styles.text}>
-                This component is an example of a nested route. It is a child of 'welcome'.
+                {console.log(this.props.test)}
               </Text>
-              <Text style={styles.text}>
-                The top menu trigger has been swapped out with a back arrow, which will take us to the
-                parent of this route.
-              </Text>
-              <WebView
-                ref={"webViewAndroidSample"}
-                automaticallyAdjustContentInsets={false}
-                source={{uri: 'http://google.com'}}
-                scalesPageToFit={true}
+                <Text style={styles.text}>
+                    The top menu trigger has been swapped out with a back arrow, which will take us to the
+                    parent of this route.
+                </Text>
+                <WebView
+                    ref={"webViewAndroidSample"}
+                    automaticallyAdjustContentInsets={false}
+                    url={"http://google.com"}
+                    javaScriptEnabledAndroid
+                    scalesPageToFit
                 />
             </View>
         );

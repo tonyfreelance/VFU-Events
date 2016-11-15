@@ -32,47 +32,55 @@ export default class Sidemenu extends Component {
 
         return (
             <Drawer theme='light'>
-              <Drawer.Header image={<Image source={require('./../img/nav.jpg')} />}>
+              <Drawer.Header image={<Image source={require('./../img/gioiThieu.jpg')} />}>
                 <View style={styles.header}>
-                  <Avatar size={80} image={<Image source={{ uri: "http://facebook.github.io/react-native/img/opengraph.png?2" }}/>} />
-                  <Text style={[styles.text, COLOR.paperGrey50, TYPO.paperFontSubhead]}>Ứng dụng xem lịch tuần</Text>
+                  <Avatar size={80} image={<Image source={require('./../img/logo.jpg')}/>} />
+                  <Text style={[styles.text, COLOR.paperGrey50, TYPO.paperFontSubhead, {fontWeight: 'bold'}]}>Ứng dụng xem lịch tuần VNUF</Text>
                 </View>
               </Drawer.Header>
 
               <Drawer.Section
-                items={[{
-                  icon: 'home',
-                  value: 'Giới Thiệu',
-                  active: !route || route === 'gioiThieu',
-                  onPress: () => this.changeScene('gioiThieu'),
-                  onLongPress: () => this.changeScene('gioiThieu')
-                }]}
-              />
-
-              <Drawer.Section
-                title="Components"
                 items={[
                   {
-                    icon: 'label',
+                    icon: 'home',
                     value: 'Lịch Tuần',
-                    // label: '4',
-                    active: route === 'lichTuan',
+                    active: !route || route === 'lichTuan',
                     onPress: () => this.changeScene('lichTuan'),
                     onLongPress: () => this.changeScene('lichTuan')
-                    }]}
-                />
-                <Divider style={{ marginTop: 8 }} />
-                <Drawer.Section
-                    title="Config"
-                    items={[{
-                        icon: 'invert-colors',
-                        value: 'Change Theme',
-                        label: '24',
-                        active: route === 'themes',
-                        onPress: () => this.changeScene('themes'),
-                        onLongPress: () => this.changeScene('themes')
-                    }]}
-                />
+                  },
+                  {
+                    icon: 'label',
+                    value: 'Giới Thiệu',
+                    // label: '4',
+                    active: route === 'gioiThieu',
+                    onPress: () => this.changeScene('gioiThieu'),
+                    onLongPress: () => this.changeScene('gioiThieu')
+                  }]}
+              />
+
+              {/* <Drawer.Section
+                title="Components"
+                items={[
+                {
+                icon: 'label',
+                value: 'Lịch Tuần',
+                // label: '4',
+                active: route === 'lichTuan',
+                onPress: () => this.changeScene('lichTuan'),
+                onLongPress: () => this.changeScene('lichTuan')
+                }]}
+              /> */}
+              <Divider style={{ marginTop: 8 }} />
+              <Drawer.Section
+                title="Thiết lập"
+                items={[{
+                  icon: 'invert-colors',
+                  value: 'Đổi giao diện',
+                  active: route === 'themes',
+                  onPress: () => this.changeScene('themes'),
+                  onLongPress: () => this.changeScene('themes')
+                }]}
+              />
 
             </Drawer>
         );

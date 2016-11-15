@@ -50,18 +50,18 @@ export default class Toolbar extends Component {
 
         return (
             <MaterialToolbar
-              title={navigator && navigator.currentRoute ? navigator.currentRoute.title : 'Giới thiệu'}
-                primary={theme}
-                icon={navigator && navigator.isChild ? 'keyboard-backspace' : 'menu'}
-                onIconPress={() => navigator && navigator.isChild ? navigator.back() : onIconPress()}
-                actions={[{
-                    icon: 'warning',
-                    badge: { value: counter, animate: true },
-                    onPress: this.increment
-                }]}
-                rightIconStyle={{
-                    margin: 10
-                }}
+              title={navigator && navigator.currentRoute ? navigator.currentRoute.title : 'Lịch Tuần'}
+              primary={theme}
+              icon={navigator && navigator.isChild ? 'keyboard-backspace' : 'menu'}
+              onIconPress={() => navigator && navigator.isChild ? navigator.back() : onIconPress()}
+              // actions={[{
+              //   icon: 'warning',
+              //   badge: { value: counter, animate: true },
+              //   onPress: this.increment
+              // }]}
+              // rightIconStyle={{
+              //   margin: 10
+              // }}
             />
         );
     }
