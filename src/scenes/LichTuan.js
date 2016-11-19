@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {
 	StyleSheet,
 	Text,
@@ -14,10 +14,11 @@ import Accordion from 'react-native-accordion';
 let GcmAndroid = require('react-native-gcm-android');
 import Notification from 'react-native-system-notification';
 import DatePicker from 'react-native-datepicker';
-
+import currentWeekNumber from 'current-week-number';
 import { Divider } from 'react-native-material-design';
 
-const API_URL = 'https://vfu-events.herokuapp.com/getEvents';
+
+
 
 export default class LichTuan extends Component {
 
@@ -71,6 +72,13 @@ export default class LichTuan extends Component {
 	}
 
 	fetchData() {
+		const {date} = this.props;
+		const weekNo = currentWeekNumber(date);
+		// For Development
+		// const API_URL = weekNo ? 'http://192.168.1.3:1337/getEvents/' + weekNo : 'http://192.168.1.3:1337/getEvents';
+		// For Production
+		const API_URL = weekNo ? 'https://vfu-events.herokuapp.com/getEvents/' + weekNo : 'https://vfu-events.herokuapp.com/getEvents';
+
 		fetch(API_URL).then((response) => response.json()).then((responseData) => {
 			let weekNo = responseData.weekNo,
 				weekEvents = responseData.weekEvents,
@@ -112,7 +120,12 @@ export default class LichTuan extends Component {
 		}).done();
 	}
 
+	static contextTypes = {
+			navigator: PropTypes.object.isRequired
+	};
+
 	render() {
+
 		if (!this.state.loaded) {
 			return this.renderLoadingView();
 		}
@@ -136,10 +149,19 @@ export default class LichTuan extends Component {
 	}
 
 	renderListView() {
+		const { navigator } = this.context;
 		return (
 			<View style={styles.container}>
 				<View style={styles.header}>
 					<Text style={styles.headerText}>Tuần {this.state.weekNo}</Text>
+					<DatePicker
+						style={{width: 30}}
+						mode="date"
+						format="MM/DD/YYYY"
+						iconSource={require('./../img/calendar.png')}
+						maxDate={new Date()}
+						onDateChange={(date) => {navigator.to('lichTuan', 'Lịch Tuần', {date: date})}}
+					/>
 				</View>
 				<ListView dataSource={this.state.dataSource} style={styles.listview} renderRow={this.renderRow} renderSectionHeader={this.renderSectionHeader}/>
 			</View>
@@ -258,10 +280,10 @@ var styles = StyleSheet.create({
 		justifyContent: 'center',
 	},
 	header: {
-		height: 60,
+		height: 65,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#B76EB8',
+		backgroundColor: '#3F51B5',
 		flexDirection: 'column',
 	},
 	headerText: {

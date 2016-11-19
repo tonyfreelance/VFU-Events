@@ -10,12 +10,12 @@ export default {
 		title: 'Giới Thiệu',
 		component: require('./scenes/GioiThieu').default,
 
-		children: {
-		    example: {
-		        // title: 'Test', // optional
-		        component: require('./scenes/NestedExample').default
-		    }
-		},
+		// children: {
+		//     example: {
+		//         title: 'Test', // optional
+		//         component: require('./scenes/NestedExample').default
+		//     }
+		// },
 	},
 
 	themes : {

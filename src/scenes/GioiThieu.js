@@ -49,7 +49,6 @@ export default class GioiThieu extends Component {
               </Card>
 
               <Button primary={theme} text="XEM LỊCH TUẦN" onPress={() => {navigator.to('lichTuan', 'Lịch Tuần') }} />
-              <Button text="Go to child component" primary={theme} onPress={() => { navigator.forward('example',{test: 'dog'}) }} />
             </View>
         );
     }

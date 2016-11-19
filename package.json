@@ -8,6 +8,7 @@
   "dependencies": {
     "@remobile/react-native-splashscreen": "^1.0.3",
     "alt": "^0.18.6",
+    "current-week-number": "^1.0.7",
     "react": "15.3.2",
     "react-native": "0.34.1",
     "react-native-accordion": "^1.0.1",

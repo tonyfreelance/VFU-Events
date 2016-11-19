@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Text, View } from 'react-native';
 import { Toolbar as MaterialToolbar } from 'react-native-material-design';
 import AppStore from '../stores/AppStore';
+import DatePicker from 'react-native-datepicker';
 
 export default class Toolbar extends Component {
 
@@ -21,12 +22,6 @@ export default class Toolbar extends Component {
             counter: 0
         };
     }
-
-    increment = () => {
-        this.setState({
-            counter: this.state.counter + 1
-        });
-    };
 
     componentDidMount = () => {
         AppStore.listen(this.handleAppStore);
@@ -57,7 +52,7 @@ export default class Toolbar extends Component {
               // actions={[{
               //   icon: 'warning',
               //   badge: { value: counter, animate: true },
-              //   onPress: this.increment
+              //   onPress: this.handleAlarm
               // }]}
               // rightIconStyle={{
               //   margin: 10
